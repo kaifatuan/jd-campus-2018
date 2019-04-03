@@ -1,0 +1,528 @@
+* {
+  margin: 0;padding: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+a, body {
+  color: #666;
+}
+.iconfont.arrow-down {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 24px;
+  z-index: 4;
+  color: #fff;
+  font-weight: bold;
+  animation: ani_down 1s ease-in-out infinite alternate;
+}
+@keyframes ani_down {
+  0% {
+    transform: translate3d(0, -2px, 0);
+  }
+  100% {
+    transform: translate3d(0, 2px, 0);
+  }
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 1097602 */
+  src: url('//at.alicdn.com/t/font_1097602_17zuotacaxm.eot');
+  src: url('//at.alicdn.com/t/font_1097602_17zuotacaxm.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1097602_17zuotacaxm.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1097602_17zuotacaxm.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1097602_17zuotacaxm.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1097602_17zuotacaxm.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* music 按钮 */
+.music-btn {
+  top: 25px;
+  right: 25px;
+  z-index: 3;
+  position: fixed;
+  width: 30px; height: 30px;
+  background: url(https://kfc.normcore.com/bft_burger/static/images/icon-play.png)
+  no-repeat center / cover;
+}
+.music-btn.off {
+  background-image: url(https://kfc.normcore.com/bft_burger/static/images/icon-mute.png);
+}
+html {
+  font-size: 37.5px;
+}
+body {
+  font-size: .18667rem;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+/* p1 */
+.p1 {
+  background-color: #ff1224;
+}
+.p1 .light, .p1 .slogon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/* 居中 往左挪一半 */
+.p1 .light {
+  margin-left: -3.86667rem;
+  margin-top: -5.2rem;
+  width: 7.73333rem;
+  height: 10.49333rem;
+  background: url(http://wqs.jd.com/promote/201707/2018campus/img/p1-light_7df180.png) no-repeat 0 0;
+  background-size: 100% auto;
+  animation: p1-light-anim .8s .6s both;
+}
+.p1.swiper-slide-active .slogon {
+  animation: fadeInUp .5s .3s both;
+}
+@keyframes fadeInUp{
+  0% {
+    opacity: 0;
+    transform: translate3d(0,100%,0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.p1 .slogon {
+  width: 2.74667rem;
+  height: 2.44rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -5.38667rem 0;
+  /* 文字不在了 有利于 seo */
+  text-indent: -133.32rem;
+  margin-left: -1.37333rem;
+  margin-top: -1.68rem;
+  background-size: 51.58667rem 2.44rem;
+}
+/* p2 */
+.p2 .bg, .p2 .light {
+  position: absolute;
+  left: 0;
+}
+.p2 .bg {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(http://wqs.jd.com/promote/201707/2018campus/img/bg-scene-01_9c56fc.jpg) no-repeat bottom;
+  background-size: 100% auto;
+}
+.p2 .light {
+  bottom: 0;
+  margin-bottom: -1.6rem;
+  margin-left: -.53333rem;
+  width: 8.70667rem;
+  height: 15.14667rem;
+  background: url(http://wqs.jd.com/promote/201707/2018campus/img/light-scene-01_bd4007.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+.p2 .dog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.8rem;
+  margin-top: -1.81333rem;
+  width: 3.6rem;
+  height: 3.62667rem;
+  background: url(http://wqs.jd.com/promote/201707/2018campus/img/dog-scene-01_8098ad.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.p2 .text-top, .p3 .text-top, .p4 .text-top, .p5 .text-top, .p6 .text-top, .p7 .text-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1.2rem;
+  margin-top: 1.6rem;
+}
+.p2 .text-top {
+  width: 1.58667rem;
+  height: .56rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.scene_c9deac.png);
+  background-position: -4.05333rem 0;
+  margin-top: 4.26667rem;
+}
+.p2 .text-bottom, .p2 .text-top {
+  background-size: 32.49333rem 2.26667rem;
+}
+.p2 .text, .p3 .text, .p4 .text, .p5 .text, .p6 .text, .p7 .text {
+  text-indent: -133.32rem;
+}
+.p2 .text-bottom {
+  width: 3.4rem;
+  height: 1.85333rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.scene_c9deac.png);
+  background-position: -19.33333rem 0;
+}
+.p2 .text-bottom, .p3 .text-bottom, .p4 .text-bottom, .p5 .text-bottom, .p6 .text-bottom, .p7 .text-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 1.2rem;
+  margin-bottom: 1.33333rem;
+}
+.p2 .num, .p3 .num, .p4 .num, .p5 .num, .p6 .num, .p7 .num {
+  color: #fff;
+  font-size: 1.66667rem;
+  line-height: 1;
+}
+.p2 .num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1.06667rem;
+  margin-top: 1.06667rem;
+}
+/* p3 */
+.p3 .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(http://wqs.jd.com/promote/201707/2018campus/img/bg-scene-02_8a15db.jpg) no-repeat bottom;
+  background-size: 100% auto;
+}
+/* p8 */
+.p8 {
+  background-color: #ff1e00;
+}
+/* swiper-slide-active 应用动画 */
+.p8.swiper-slide-active .logo-ran {
+  animation: fadeInRight .5s .3s both;
+}
+.p8.swiper-slide-active .text-slogon {
+  animation: fadeInRight .5s .4s both;
+}
+.p8.swiper-slide-active .text-title {
+  animation: fadeInRight .5s .6s both;
+}
+.p8.swiper-slide-active .text-detail {
+  animation: fadeInRight .5s .7s both;
+}
+.p8 .logo-ran, .p8 .text-slogon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -133.32rem;
+  margin-left: .85333rem;
+}
+.p8 .logo-ran {
+  width: 1.90667rem;
+  height: 1.73333rem;
+  background-image: 
+  url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.other_5adc1e.png);
+  background-position: -3.02667rem 0;
+  margin-top: 1.6rem;
+  background-size: 14.56rem 4.64rem;
+}
+.p8 .text-slogon {
+  width: 5.73333rem;
+  height: 1.97333rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -31.73333rem 0;
+  margin-top: 5.65333rem;
+  -webkit-background-size: 51.58667rem 2.44rem;
+  background-size: 51.58667rem 2.44rem;
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(50%,0,0);
+}
+100% {
+    opacity: 1;
+    transform: none;
+}
+}
+.p8 .text-detail, .p8 .text-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: .85333rem;
+  color: #fff;
+}
+.p8 .text-title {
+  margin-top: 9.38667rem;
+  width: auto;
+  height: auto;
+  font-size: .45333rem;
+  text-indent: 0;
+  background: none;
+}
+.p8 .text-detail {
+  margin-top: 10.26667rem;
+  font-size: .26667rem;
+  line-height: 1.8;
+}
+.p8 .logo-jd {
+  position: absolute;
+  left: 0;
+  margin-left: .85333rem;
+}
+.p8 .logo-jd {
+  width: 1.61333rem;
+  height: .32rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.other_5adc1e.png);
+  background-position: -1.38667rem 0;
+  bottom: 0;
+  text-indent: -133.32rem;
+  margin-bottom: .8rem;
+  background-size: 14.56rem 4.64rem;
+}
+.p8 .cube-2, .p8 .cube-3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 12.26667rem;
+  margin-right: 2.66667rem;
+  width: 5.33333rem;
+  height: 1.2rem;
+  background-image: linear-gradient(-90deg,hsla(0,0%,100%,.5),hsla(0,0%,100%,0));
+  transform: rotate(-45deg);
+}
+.p8 .cube-2 {
+  transform: rotate(-45deg) translate3d(3.06667rem,0,0);
+}
+.p8.swiper-slide-active .cube-2 {
+  animation: cube-1-anim .8s .8s both;
+}
+.p8.swiper-slide-active .cube-3 {
+  animation: cube-2-anim .8s .8s both;
+}
+@keyframes cube-1-anim {
+	0% {
+		opacity: 0;
+		transform: rotate(-45deg) translateZ(0)
+	}
+	to {
+		opacity: 1;
+		transform: rotate(-45deg) translate3d(3.06667rem,0,0)
+	}
+}
+.p8 .cube-3 {
+  margin-top: 14.13333rem;
+  margin-right: 2.66667rem;
+  transform: rotate(-45deg) translate3d(1.6rem,0,0) scale(.8);
+  opacity: .5;
+}
+@keyframes cube-2-anim {
+	0% {
+		opacity: 0;
+		transform: rotate(-45deg) translateZ(0) scale(.8)
+	}
+
+	to {
+		opacity: .5;
+		transform: rotate(-45deg) translate3d(1.6rem,0,0) scale(.8)
+	}
+}
+.p8 .cube-2 span, .p8 .cube-3 span {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -.36rem;
+  margin-right: -.36rem;
+  width: .70667rem;
+  height: .70667rem;
+  background-color: #fff;
+  transform: rotate(51deg) skew(20deg);
+}
+/* 柱子父容器 */
+.p8 .cube-cnt-2, .p8 .cube-cnt-3 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5.33333rem;
+  height: 1.2rem;
+}
+.p8 .cube-cnt-3 {
+  animation: cube-cnt-2-anim 1s ease-in-out infinite alternate;
+}
+.p8 .cube-cnt-2 {
+  animation: cube-cnt-1-anim 1.5s ease-in-out infinite alternate;
+}
+@keyframes cube-cnt-1-anim{
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+      transform: translate3d(.10667rem,-.10667rem,0);
+  }
+}
+@keyframes cube-cnt-2-anim {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+      transform: translate3d(.08rem,-.08rem,0);
+  }
+}
+/* 招聘流程 */
+.p9 .schedule-cnt, .p9 .text-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: .85333rem;
+}
+.p9 .cube-1, .p10 .cube-1, .p11 .cube-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 1.36rem;
+  margin-left: .85333rem;
+  width: 1.06667rem;
+  height: .22667rem;
+  background-image: linear-gradient(90deg,#ff6c4f,#fffefd);
+}
+.p9 .text-title {
+  margin-top: 1.86667rem;
+}
+.p9 .text-title, .p10 .text-title, .p11 .text-title {
+  color: #000;
+  font-size: .64rem;
+}
+.p9.swiper-slide-active .text-title {
+  animation: fadeInRight .5s .4s both;
+}
+.p9.swiper-slide-active .cube-1 {
+  animation: fadeInRight .5s .3s both;
+}
+.p9 .cube-1 span, .p10 .cube-1 span, .p11 .cube-1 span {
+  display: inline-block;
+  width: .22667rem;
+  height: 100%;
+  background-color: #ff1224;
+}
+.p9 .schedule-cnt {
+  margin-top: 4.4rem;
+  width: 100%;
+}
+.p9 .schedule-cnt, .p9 .text-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: .85333rem;
+}
+.p9 .schedule-cnt .part {
+  position: relative;
+  text-indent: -133.32rem;
+}
+.p9.swiper-slide-active .part-1 .date {
+  animation: fadeInRight .5s .45s both;
+}
+.p9 .part-1 .date {
+  background-size: 51.58667rem 2.44rem;
+}
+.p9 .part-1 .date {
+  width: 5.66667rem;
+  height: .56rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -20.29333rem 0;
+}
+.p9.swiper-slide-active .part-1 .content {
+  animation: fadeInRight .5s .5s both;
+}
+.p9 .schedule-cnt .part .content {
+  margin-top: .26667rem;
+}
+.p9 .part-1 .content {
+  width: 1.26667rem;
+  height: .30667rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: 0 0;
+}
+.p9 .part-1 .content, .p9 .part-1 .date {
+  background-size: 51.58667rem 2.44rem;
+}
+.p9 .schedule-cnt .part+.part {
+  margin-top: .77333rem;
+}
+.p9.swiper-slide-active .part-2 .date {
+  animation: fadeInRight .5s .55s both;
+}
+.p9 .part-2 .date, .p9 .part-2 .content {
+  background-size: 51.58667rem 2.44rem;
+}
+.p9 .part-2 .date {
+  width: 5.82667rem;
+  height: .56rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -37.49333rem 0;
+}
+.p9.swiper-slide-active .part-2 .content {
+  animation: fadeInRight .5s .6s both;
+}
+.p9 .schedule-cnt .part .content {
+  margin-top: .26667rem;
+}
+.p9 .part-2 .content {
+  width: 1.28rem;
+  height: .30667rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -2.6rem 0;
+}
+.p9.swiper-slide-active .part-3 .date {
+  animation: fadeInRight .5s .65s both;
+}
+.p9 .part-3 .date {
+  width: 5.72rem;
+  height: .56rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -25.98667rem 0;
+}
+.p9.swiper-slide-active .part-3 .content {
+  animation: fadeInRight .5s .7s both;
+}
+.p9 .part-3 .content {
+  width: 1.28rem;
+  height: .30667rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -1.29333rem 0;
+}
+.p9 .part-3 .content, .p9 .part-3 .date {
+  -webkit-background-size: 51.58667rem 2.44rem;
+  background-size: 51.58667rem 2.44rem;
+}
+
+.p9.swiper-slide-active .part-4 .date {
+  animation: fadeInRight .5s .75s both;
+}
+.p9 .part-4 .content, .p9 .part-4 .date {
+  background-size: 51.58667rem 2.44rem;
+}
+.p9 .part-4 .date {
+  width: 3.04rem;
+  height: .58667rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -8.16rem 0;
+}
+.p9 .schedule-cnt .part .content {
+  margin-top: .26667rem;
+}
+.p9 .part-4 .content {
+  width: 1.45333rem;
+  height: .30667rem;
+  background-image: url(http://wqs.jd.com/promote/201707/2018campus/img/sprite.text_2b7b0a.png);
+  background-position: -3.90667rem 0;
+}
+.p9.swiper-slide-active .part-4 .content {
+  animation: fadeInRight .5s .8s both;
+}
