@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>京东校招</title>
+  <link rel="stylesheet" href="./lib/odometer-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <span class="iconfont arrow-down">&#xe629;</span>
+  <audio src="http://wqs.jd.com/promote/201707/2018campus/plugin/bg_c2bd53.mp3" loop id="bgm"></audio>
+  <div class="music-btn"></div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide p1">
+        <div class="light"></div>
+        <div class="slogon">这是一家以速度见长的公司</div>
+      </div>
+      <div class="swiper-slide p2">
+        <div class="bg">
+        </div>
+        <div class="light"></div>
+        <div class="dog"></div>
+        <div class="text text-top">The speed of life beginning</div>
+        <div class="text text-bottom">
+          快才拥有可能，这是一家以速度见长的公司
+        </div>
+        <div class="num font-steelfib">
+        </div>
+      </div>
+      <div class="swiper-slide p3">
+        <div class="bg">
+        </div>
+      </div>
+      <div class="swiper-slide p8">
+        <div class="logo-ran">燃</div>
+        <div class="text-slogon">
+          更快到达你想要的未来
+        </div>
+        <div class="cube-cnt-2">
+          <div class="cube-2">
+            <span></span>
+          </div>
+        </div>
+        <div class="cube-cnt-3">
+          <div class="cube-3">
+            <span></span>
+          </div>
+        </div>
+        <div class="text-title">
+          京东2018校园招聘
+        </div>
+        <div class="text-detail">
+          招聘人群： 2018年毕业<br>
+          全日制本科、硕士、博士
+        </div>
+        <div class="logo-jd">京东招聘</div>
+      </div>
+      <div class="swiper-slide p9">
+        <div class="cube-1">
+          <span></span>
+        </div>
+        <div class="text-title">招聘流程</div>
+        <div class="schedule-cnt">
+          <div class="part part-1">
+            <div class="date">08月15日</div>
+            <div class="content">线下宣讲开始</div>
+          </div>
+          <div class="part part-2">
+            <div class="date">09月07日-09月08日</div>
+            <div class="content">在线笔试</div>
+          </div>
+          <div class="part part-3">
+            <div class="date">09月16日-09月27日</div>
+            <div class="content">线下面试</div>
+          </div>
+          <div class="part part-4">
+            <div class="date">10月中旬</div>
+            <div class="content">OFFER发放</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- water p2 -->
+  <audio src="http://wqs.jd.com/promote/201707/2018campus/plugin/water_f86aa4.mp3" data-slide="true"
+    id="audio_water"></audio>
+  <!-- run p3 -->
+  <audio src="http://wqs.jd.com/promote/201707/2018campus/plugin/run_5f27f8.mp3" data-slide="true"
+    id="audio_run"></audio>
+  <script src="./lib/odometer.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js">
+  </script>
+  <script>
+    const p2Num = document.querySelector('.p2 .num');
+    const musicBtn = document.querySelector('.music-btn');
+    const bgm = document.getElementById('bgm');
+    od = new Odometer({
+      el: p2Num,
+      format: '(,ddd).ddd',
+      value: 1.618,
+    });
+    const slide_operation_map = {
+      '0': slidesBgmPause,
+      '1': p2Function,
+      '2': p3Function
+    };
+    function slidesBgmPause() {
+      const audios = document
+        .querySelectorAll('audio[data-slide="true"]');
+      audios.forEach(audio => audio.pause());
+    }
+    function p2Function() {
+      p2Num.innerHTML = 0.004;
+      const audio_water = document.getElementById('audio_water');
+      slidesBgmPause();
+      audio_water.play();
+    }
+    function p3Function() {
+      const audio_run = document.getElementById('audio_run');
+      slidesBgmPause();
+      audio_run.play();
+    }
+    function bgmPlay() {
+      bgm.play();
+      musicBtn.classList.remove('off');
+    }
+    // 音乐按钮
+    musicBtn.addEventListener('click', () => {
+      if (bgm.paused) {
+        bgmPlay();
+      } else {
+        const audios = document.querySelectorAll('audio');
+        audios.forEach(audio => audio.pause());
+        musicBtn.classList.add('off');
+      }
+    });
+    var mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical', // 垂直切换选项
+      on: {
+        slideChangeTransitionEnd: function () {
+          // console.log(this.activeIndex);
+          //切换结束时，告诉我现在是第几个slide
+          console.log(this);
+          const slide_operation = slide_operation_map[this.activeIndex];
+          if (slide_operation) {
+            if (typeof slide_operation === 'function') {
+              slide_operation(this);
+            } else if (Array.isArray(slide_operation)) {
+              slide_operation.forEach(opt => {
+                opt(this);
+              })
+            }
+          }
+        },
+      },
+    })        
+  </script>
+</body>
+
+</html>
